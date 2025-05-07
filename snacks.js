@@ -100,7 +100,12 @@ function findPostById(posts, id){
     return posts.find((p) => p.id === id) || null
 }
 
-function addPost(posts, post) {
+function addPosts(posts, post) {
+    //trasformato array di post in array di ids
+    const ids = posts.map((p) => p.id) 
+    if(ids.includes(post.id)){
+        throw new Error('id gia esistente')
+    }
     posts.push(post)
 }
 function removePost(posts, id) {//per trovare elem specifico dobbiamo trovare indice

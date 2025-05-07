@@ -112,3 +112,8 @@ test(`Dopo aver rimosso un post con la funzione removePost, l'array posts deve c
     })
     expect(posts).toHaveLength(2)//noi pariamo dall originale di 3 elem
 })
+
+//9. Se si tenta di aggiungere un post con un id o uno slug già esistente, la funzione addPost deve lanciare un errore.
+test(`Se si tenta di aggiungere un post con un id o uno slug già esistente, la funzione addPost deve lanciare un errore.`, () => {
+    expect(() => addPosts(posts, {id: 1, title: "introduction js", slug: "introduction-js"})).toThrow('id gia esistente')
+})
