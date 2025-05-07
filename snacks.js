@@ -13,20 +13,20 @@ function getInitials(wholeName) {
 // }
 
 //3.
-//"La funzione average calcola la media aritmetica di un array di numeri."
-function average(arr) {
+//"La funzione average calcola la media aritmetica di un postsay di numeri."
+function average(posts) {
     let sum = 0
-    arr.forEach((n) => {
+    posts.forEach((n) => {
         if (isNaN(n)) {
             throw new Error("Average just wants numbers")
         } else {
             sum += n
         }
     })
-    return sum / arr.length
+    return sum / posts.length
 }
 //Using reduce
-//return arr.reduce((acc, num) => acc + num, 0) / arr.length
+//return posts.reduce((acc, num) => acc + num, 0) / posts.length
 
 //4. 
 //La funzione createSlug sostituisce gli spazi con -."
@@ -45,7 +45,7 @@ function isPalindrome(str) {
         }
     }
 }
-//reverse e metodo array
+//reverse e metodo postsay
 // cont strInversed = str.split("").reverse().join("");
 // return str === strInversed
 
@@ -59,17 +59,53 @@ function createSlug(str) {
 }
 
 //7
-///Crea un array di oggetti posts, in cui ogni oggetto ha le proprietà 
+///Crea un postsay di oggetti posts, in cui ogni oggetto ha le proprietà 
 // id, title e slug.
 // Creare un test che verifichi le seguenti descrizioni:
-// "La funzione findPostById restituisce il post corretto dato l’array di post e l’id"
+// "La funzione findPostById restituisce il post corretto dato l’postsay di post e l’id"
 // Creare uno o più test aggiuntivi che controllino che la struttura dati passati 
 // sia conforme(ogni post ha le proprietà id, title e slug, viene passato un id numerico).
 
 
+const posts = [
+    {
+        id: 1,
+        title: "introduction js",
+        slug: "introduction-js"
+    },
+    {
+        id: 2,
+        title: "study react",
+        slug: "study-react"
+    },
+    {
+        id: 3,
+        title: "study python",
+        slug: "study-python"
+    }
+]
 
-function findPostById(arr, id){
-    return arr.find((p) => p.id === id)
+function findPostById(posts, id){
+    if(isNaN(id)){
+        throw new Error(`${id} non e un id`)
+    }
+    posts.forEach((p) => {
+        if(p.id === undefined ||
+            p.title === undefined ||
+            p.slug === undefined
+        ){
+            throw new Error("l postsay post non e nel formato corretto")
+        }
+    })
+    return posts.find((p) => p.id === id) || null
+}
+
+function addPost(posts, post) {
+    posts.push(post)
+}
+function removePost(posts, id) {//per trovare elem specifico dobbiamo trovare indice
+   const index = posts.findIndex((p) = p.id === id)
+   posts.splice(index, 1)
 }
 
 
@@ -78,5 +114,7 @@ module.exports = {
     createSlug,
     average,
     isPalindrome,
-    findPostById
+    findPostById,
+    addPosts,
+    removePost
 }
