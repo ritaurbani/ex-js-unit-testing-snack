@@ -15,12 +15,12 @@ test(`La funzione getInitials restituisce le iniziali di un nome completo`, () =
 })
 
 
-
 //2.La funzione createSlug restituisce una stringa in lowercase.
 // test(`La funzione createSlug restituisce una stringa in lowercase`, () => {
 //     expect(createSlug("CIAO RITA")).toBe("ciao rita")
 //     expect(createSlug("Ciao")).toBe("ciao")
 // })
+
 
 //3. La funzione average calcola la media aritmetica di un array di numeri."
 test('La funzione average calcola la media aritmetica di un array di numeri.', () => {
@@ -31,8 +31,8 @@ test('La funzione average calcola la media aritmetica di un array di numeri.', (
 //4.La funzione createSlug sostituisce gli spazi con -."
 // test(`La funzione createSlug restituisce una stringa in lowercase`, () => {
 //     expect(createSlug("CIAO RITA bella")).toBe("ciao-rita-bella")
-    
 // })
+
 
 //5.La funzione isPalindrome verifica se una stringa è un palindromo.
 test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
@@ -40,6 +40,8 @@ test("La funzione isPalindrome verifica se una stringa è un palindromo.", () =>
     // expect((isPalindrome("anna "))).toBeTruthy()
     expect((isPalindrome("rita"))).toBeFalsy()
 })
+
+
 
 //6.La funzione createSlug lancia un errore se il titolo è vuoto o non valido"
 test(`La funzione createSlug lancia un errore se il titolo è vuoto o non valido`, () => {
@@ -86,6 +88,10 @@ test('La funzione findPostById restituisce il post corretto dato l array di post
     expect(() => findPostById(posts,"ciao" )).toThrow("ciao non e un id")
     expect(() => findPostById([32,67], 2 )).toThrow("l array non e valido")
 })
+
+
+
+
 
 
 ///////BONUS//////
