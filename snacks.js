@@ -39,11 +39,11 @@ function average(posts) {
 function isPalindrome(str) {
     let newString = ""
     for (let i = str.length - 1; i >= 0; i--) {
-        newString += str[i]; // oppure newString = newString + str[i];
-        if (str.trim() === newString){
+        newString += str[i]; // oppure newString = newString + str[i];    
+    }
+    if (str.trim() === newString){
             return true
         }
-    }
 }
 //reverse e metodo postsay
 // cont strInversed = str.split("").reverse().join("");

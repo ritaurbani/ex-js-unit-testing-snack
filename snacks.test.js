@@ -28,6 +28,7 @@ test('La funzione average calcola la media aritmetica di un array di numeri.', (
     expect(() => average([4,3,"ciao"])).toThrow()
 })    
 
+
 //4.La funzione createSlug sostituisce gli spazi con -."
 // test(`La funzione createSlug restituisce una stringa in lowercase`, () => {
 //     expect(createSlug("CIAO RITA bella")).toBe("ciao-rita-bella")
@@ -90,10 +91,6 @@ test('La funzione findPostById restituisce il post corretto dato l array di post
 })
 
 
-
-
-
-
 ///////BONUS//////
 
 //lavoraimo su aggiungere e rimuovere da array quindi e importante resettare ogni volta
@@ -106,7 +103,6 @@ test('Dopo aver aggiunto un post con la funzione addPost, l\`array posts deve co
         slug: "study-typescript"
     })
     expect(posts).toHaveLength(4)
-
 })
 
 //8.Dopo aver rimosso un post con la funzione removePost, l'array posts deve contenere un elemento in meno."
