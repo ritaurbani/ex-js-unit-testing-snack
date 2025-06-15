@@ -94,7 +94,7 @@ function findPostById(posts, id){
             p.title === undefined ||
             p.slug === undefined
         ){
-            throw new Error("l postsay post non e nel formato corretto")
+            throw new Error("l array non e valido")
         }
     })
     return posts.find((p) => p.id === id) || null
@@ -109,7 +109,7 @@ function addPosts(posts, post) {
     posts.push(post)
 }
 function removePost(posts, id) {//per trovare elem specifico dobbiamo trovare indice
-   const index = posts.findIndex((p) = p.id === id)
+   const index = posts.findIndex((p) => p.id === id)
    posts.splice(index, 1)
 }
 
